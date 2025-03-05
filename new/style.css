@@ -1,0 +1,107 @@
+:root {
+    --t0: 4.5rem;
+    --t1: 4rem;
+    --t2: 2.5rem;
+    --t3: 2rem;
+    --p0: 1.687rem;
+    --p1: 1.25rem;
+    --p2: 1rem;
+    --p3: 0.75rem;
+    --gutter: 3.125rem;
+  }
+  @supports (font-variation-settings: normal) {
+    html {
+        font-family: "Inter var", sans-serif;
+    }
+  }
+  html{
+    text-rendering: optimizelegibility;
+      font-feature-settings: "kern";
+      font-kerning: normal;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.15;
+      text-size-adjust: 100%;
+      display: block;
+    font-size: 1.11111vw;
+      word-break: break-word;
+  }
+  @media (max-width: 1080px) {
+    html {
+        font-size: 12px !important;
+    }
+  }
+  @media (max-width: 730px) {
+    :root {
+        --t0: 2.67rem;
+        --t1: 2.67rem;
+        --t2: 2rem;
+        --t3: 1.67rem;
+        --p0: 1.5rem;
+        --p1: 1.167rem;
+        --p2: 1rem;
+        --p3: 1rem;
+    }
+  }
+  @media (max-width: 1080px) {
+    :root {
+        --gutter: 3vw;
+    }
+  }
+  @media (max-width: 670px) {
+    :root {
+        --gutter: 20px;
+    }
+  }
+
+  #site-header.hide {
+    top: -80px;
+}
+#site-header.scrolled {
+    background-color: #000002;
+}
+#site-header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    transition: background-color 0.3s ease, top 0.3s ease;
+    background-color: #ffffff;
+    z-index: 100;
+}
+  
+.scroll-section .scroll-item {
+    opacity: 0;
+    animation: scroll-reveal 3.5s linear forwards;
+    animation-timeline: view(y);
+    animation-range-start: cover 5.5vh;
+    animation-range-end: cover 100.5vh;
+    transition: opacity 0.2s ease-in-out;
+}
+
+@keyframes scroll-reveal {
+    to {
+        opacity: 1;
+    }
+}
+
+.text-scroll {
+    display: inline;
+    color: hsl(0deg 0% 100% / 58%);
+    opacity: 0.8;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-image: linear-gradient(90deg, #FFF, #FFF);
+    animation: scroll-reveal 3.5s linear forwards;
+    animation-timeline: view(y);
+    animation-range-start: cover 10.5vh;
+    animation-range-end: cover 94.5vh;
+    transition: background-size .8s ease, opacity 0.2s ease;
+}
+
+@keyframes scroll-reveal {
+    to {
+        background-size: 100% 100%;
+        opacity: 1;
+    }
+}
