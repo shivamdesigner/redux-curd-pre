@@ -12,6 +12,8 @@
   @supports (font-variation-settings: normal) {
     html {
         font-family: "Inter var", sans-serif;
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
   }
   html{
@@ -55,6 +57,7 @@
 
   #site-header.hide {
     top: -80px;
+    transition: top 0.2s ease 0.s;
 }
 #site-header.scrolled {
     background-color: #000002;
@@ -63,8 +66,9 @@
     top: 0;
     width: 100%;
     position: fixed;
-    transition: background-color 0.3s ease, top 0.3s ease;
+    transition: background-color 0.3s ease, top 0.6s ease-in-out 0.4s;
     background-color: #ffffff;
+
     z-index: 100;
 }
   
